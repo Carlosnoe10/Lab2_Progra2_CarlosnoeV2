@@ -101,6 +101,40 @@ public class Lab2Progra2_CarlosNoé {
         }
     }
 
+    public static void CrearChefs(ArrayList<Chefs> ING) {
+        Scanner k1ng3 = new Scanner(System.in);
+        Scanner k1ng4 = new Scanner(System.in);
+        System.out.println("Ingrese el nombre: ");
+        String Name = k1ng3.nextLine();
+        System.out.println("Ingrese la edad: ");
+        int edad = k1ng4.nextInt();
+        System.out.println("Ingrese las estrellas michellin");
+        int Michellin = k1ng3.nextInt();
+        boolean DiaoNoc = false;
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Ingrese su turno if es de dia 1 si no 2");
+            int Turn = k1ng4.nextInt();
+            if (Turn == 1) {
+                DiaoNoc = true;
+                i++;
+            } else if (Turn == 2) {
+                DiaoNoc = false;
+                i++;
+            } else {
+                i--;
+            }
+        }
+        System.out.println("Ingrese su sueldo");
+        double Sueldo = k1ng3.nextDouble();
+
+        if ((edad >= 18) && (Michellin >= 0) && (Michellin <= 5) && (Sueldo > 0)) {
+            Chefs chef = new Chefs(Name, edad, Michellin, DiaoNoc, Sueldo);
+        } else {
+            System.out.println("Valores Invalidos ");
+        }
+
+    }
+
     public static void CRUDChefs(ArrayList<Chefs> ING) {
         Scanner k1ng2 = new Scanner(System.in);
         System.out.println("Bienvenid al menu \n"
@@ -116,16 +150,16 @@ public class Lab2Progra2_CarlosNoé {
                     x++;
                     switch (menu) {
                         case 1:
-                            CrearConsecionaria();
+                            CrearChefs(ING);
                             break;
                         case 2:
                             MODCliente();
                             break;
                         case 3:
-                            
+
                             break;
                         case 4:
-                            
+
                             break;
 
                     }// switch menu p
@@ -148,7 +182,7 @@ public class Lab2Progra2_CarlosNoé {
     }
 
     public static void CRUDMeseros(ArrayList<Meseros> ING) {
-                Scanner k1ng2 = new Scanner(System.in);
+        Scanner k1ng2 = new Scanner(System.in);
         System.out.println("Bienvenid al menu \n"
                 + "1. Crear \n"
                 + "2. Modificar\n"
@@ -168,10 +202,10 @@ public class Lab2Progra2_CarlosNoé {
                             MODCliente();
                             break;
                         case 3:
-                            
+
                             break;
                         case 4:
-                            
+
                             break;
 
                     }// switch menu p
@@ -195,7 +229,7 @@ public class Lab2Progra2_CarlosNoé {
     }
 
     public static void CRUDBartenders(ArrayList<Bartenders> ING) {
-                Scanner k1ng2 = new Scanner(System.in);
+        Scanner k1ng2 = new Scanner(System.in);
         System.out.println("Bienvenid al menu \n"
                 + "1. Crear \n"
                 + "2. Modificar\n"
@@ -215,10 +249,10 @@ public class Lab2Progra2_CarlosNoé {
                             MODCliente();
                             break;
                         case 3:
-                            
+
                             break;
                         case 4:
-                            
+
                             break;
 
                     }// switch menu p
@@ -241,7 +275,7 @@ public class Lab2Progra2_CarlosNoé {
     }
 
     public static void CRUDMesas(ArrayList<Mesas> ING) {
-                Scanner k1ng2 = new Scanner(System.in);
+        Scanner k1ng2 = new Scanner(System.in);
         System.out.println("Bienvenid al menu \n"
                 + "1. Crear \n"
                 + "2. Modificar\n"
@@ -261,10 +295,10 @@ public class Lab2Progra2_CarlosNoé {
                             MODCliente();
                             break;
                         case 3:
-                            
+
                             break;
                         case 4:
-                            
+
                             break;
 
                     }// switch menu p
