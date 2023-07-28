@@ -112,7 +112,7 @@ public class Lab2Progra2_CarlosNoé {
         int menu = k1ng2.nextInt();
         for (int x = 0; x < 1; x++) {
             while (menu != 5) {
-                if ((menu > 0) && (menu < 3)) { // 4 es igual al numero limite que deseo agregar
+                if ((menu > 0) && (menu < 5)) { // 4 es igual al numero limite que deseo agregar
                     x++;
                     switch (menu) {
                         case 1:
@@ -148,15 +148,142 @@ public class Lab2Progra2_CarlosNoé {
     }
 
     public static void CRUDMeseros(ArrayList<Meseros> ING) {
+                Scanner k1ng2 = new Scanner(System.in);
+        System.out.println("Bienvenid al menu \n"
+                + "1. Crear \n"
+                + "2. Modificar\n"
+                + "3. Eliminar \n"
+                + "4. listar \n"
+                + "5. Salida");
+        int menu = k1ng2.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 5) {
+                if ((menu > 0) && (menu < 5)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            CrearConsecionaria();
+                            break;
+                        case 2:
+                            MODCliente();
+                            break;
+                        case 3:
+                            
+                            break;
+                        case 4:
+                            
+                            break;
+
+                    }// switch menu p
+                    System.out.println("Bienvenid al menu \n"
+                            + "1. Crear \n"
+                            + "2. Modificar\n"
+                            + "3. Eliminar \n"
+                            + "4. listar\n"
+                            + "5. Salida");
+                    menu = k1ng2.nextInt();
+
+                } else {
+                    System.out.println("Ingrese adecuadamente el numero");
+                    x--;
+                }//if
+            }//while
+        }//for
+
+        System.out.println("Fin");
 
     }
 
     public static void CRUDBartenders(ArrayList<Bartenders> ING) {
+                Scanner k1ng2 = new Scanner(System.in);
+        System.out.println("Bienvenid al menu \n"
+                + "1. Crear \n"
+                + "2. Modificar\n"
+                + "3. Eliminar \n"
+                + "4. listar \n"
+                + "5. Salida");
+        int menu = k1ng2.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 5) {
+                if ((menu > 0) && (menu < 5)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            CrearConsecionaria();
+                            break;
+                        case 2:
+                            MODCliente();
+                            break;
+                        case 3:
+                            
+                            break;
+                        case 4:
+                            
+                            break;
 
+                    }// switch menu p
+                    System.out.println("Bienvenid al menu \n"
+                            + "1. Crear \n"
+                            + "2. Modificar\n"
+                            + "3. Eliminar \n"
+                            + "4. listar\n"
+                            + "5. Salida");
+                    menu = k1ng2.nextInt();
+
+                } else {
+                    System.out.println("Ingrese adecuadamente el numero");
+                    x--;
+                }//if
+            }//while
+        }//for
+
+        System.out.println("Fin");
     }
 
     public static void CRUDMesas(ArrayList<Mesas> ING) {
+                Scanner k1ng2 = new Scanner(System.in);
+        System.out.println("Bienvenid al menu \n"
+                + "1. Crear \n"
+                + "2. Modificar\n"
+                + "3. Eliminar \n"
+                + "4. listar \n"
+                + "5. Salida");
+        int menu = k1ng2.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 5) {
+                if ((menu > 0) && (menu < 5)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            CrearConsecionaria();
+                            break;
+                        case 2:
+                            MODCliente();
+                            break;
+                        case 3:
+                            
+                            break;
+                        case 4:
+                            
+                            break;
 
+                    }// switch menu p
+                    System.out.println("Bienvenid al menu \n"
+                            + "1. Crear \n"
+                            + "2. Modificar\n"
+                            + "3. Eliminar \n"
+                            + "4. listar\n"
+                            + "5. Salida");
+                    menu = k1ng2.nextInt();
+
+                } else {
+                    System.out.println("Ingrese adecuadamente el numero");
+                    x--;
+                }//if
+            }//while
+        }//for
+
+        System.out.println("Fin");
     }
 
 }
