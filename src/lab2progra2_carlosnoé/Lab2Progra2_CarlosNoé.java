@@ -750,7 +750,7 @@ public class Lab2Progra2_CarlosNoé {
                                     i++;
                                     for (int j = 0; j < 1; j++) {
                                         System.out.println("Ingrese el nuevo sueldo");
-                                        int Edad = k1ng.nextInt();
+                                        double Edad = k1ng.nextDouble();
                                         if (Edad > 0) {
                                             j++;
                                             ING.get(Cambiar).setSueldo(Edad);
@@ -865,21 +865,21 @@ public class Lab2Progra2_CarlosNoé {
         ING.add(mes);
     }
 
-    public static void MODMesas() {
+    public static void MODMesas(ArrayList<Mesas> ING) {
         Scanner k1ng = new Scanner(System.in);
         System.out.println("1. Mod Numero De mesas\n"
                 + "2. Mod Numero de utencilios \n"
                 + "3. Mod Precio mesas");
         int Mas = k1ng.nextInt();
         for (int w = 0; w < 1; w++) {
-            while (Mas != 5) {
-                if ((Mas > 0) && (Mas < 5)) {
+            while (Mas != 3) {
+                if ((Mas > 0) && (Mas < 4)) {
                     w++;
                     switch (Mas) {
                         case 1:
-                            ListarBartenders(ING);
+                            ListarMesas(ING);
                             for (int i = 0; i < 1; i++) {
-                                System.out.println("Ingrese el numero de la persona que desea cambiarle la edad: ");
+                                System.out.println("Ingrese el numero de la mesa que desea cambiarle el numero: ");
                                 int Cambiar = k1ng.nextInt();
                                 if (Cambiar >= ING.size()) {
                                     i--;
@@ -887,11 +887,11 @@ public class Lab2Progra2_CarlosNoé {
                                 } else {
                                     i++;
                                     for (int j = 0; j < 1; j++) {
-                                        System.out.println("Ingrese la nueva edad");
+                                        System.out.println("Ingrese la nueva cantidad");
                                         int Edad = k1ng.nextInt();
-                                        if (Edad >= 18) {
+                                        if (Edad > 0) {
                                             j++;
-                                            ING.get(Cambiar).setEdad(Edad);
+                                            ING.get(Cambiar).setNumeroDePlatos(Edad);
                                         } else {
                                             System.out.println("Valor invalido");
                                             j--;
@@ -901,9 +901,52 @@ public class Lab2Progra2_CarlosNoé {
                             }
                             break;
                         case 2:
-
+                            ListarMesas(ING);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero de la mesa que desea cambiarle el numero de utencilios: ");
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    i++;
+                                    for (int j = 0; j < 1; j++) {
+                                        System.out.println("Ingrese la nueva cantidad");
+                                        int Edad = k1ng.nextInt();
+                                        if (Edad > 0) {
+                                            j++;
+                                            ING.get(Cambiar).setNumeroDeUtencilios(Edad);
+                                        } else {
+                                            System.out.println("Valor invalido");
+                                            j--;
+                                        }
+                                    }
+                                }
+                            }
                             break;
                         case 3:
+                            ListarMesas(ING);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero de la mesa que desea cambiarle el precio: ");
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    i++;
+                                    for (int j = 0; j < 1; j++) {
+                                        System.out.println("Ingrese el nuevo precio");
+                                        double Edad = k1ng.nextDouble();
+                                        if (Edad > 0) {
+                                            j++;
+                                            ING.get(Cambiar).setPrecioTotal(Edad);
+                                        } else {
+                                            System.out.println("Valor invalido");
+                                            j--;
+                                        }
+                                    }
+                                }
+                            }
 
                             break;
 
@@ -931,16 +974,16 @@ public class Lab2Progra2_CarlosNoé {
                     x++;
                     switch (menu) {
                         case 1:
-                            CrearConsecionaria();
+                            CrearMesas(ING);
                             break;
                         case 2:
-                            MODCliente();
+                            MODMesas(ING);
                             break;
                         case 3:
-
+                            EliminarMesas(ING);
                             break;
                         case 4:
-
+                            ListarMesas(ING);
                             break;
 
                     }// switch menu p
