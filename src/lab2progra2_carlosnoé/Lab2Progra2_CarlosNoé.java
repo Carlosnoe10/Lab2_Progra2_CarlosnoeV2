@@ -31,26 +31,39 @@ public class Lab2Progra2_CarlosNoé {
                         switch (menu) {
                             case 1:
                                 System.out.println("--Bienvenido al submenu Chefs--");
+                                CRUDChefs(Chefs);
                                 break;
 
                             case 2:
                                 System.out.println("--Bienvenido al submenu Meseros--");
+                                CRUDMeseros(Meseros);
                                 break;
 
                             case 3:
                                 System.out.println("--Bienvenido al submenu Bartenders--");
+                                CRUDBartenders(Barten);
                                 break;
 
                             case 4:
                                 System.out.println("--Bienvenido al submenu Mesas--");
+                                CRUDMesas(Mesas);
 
                                 break;
                         }
+                        System.out.println("--Bienvenido al menu--");
+                        System.out.println("Ingrese el numero adecuado a la opcion que desea ingresar: ");
+                        System.out.println("Opcion 1. Menu Chefs");
+                        System.out.println("Opcion 2. Menu Meseros");
+                        System.out.println("Opcion 3. Menu Bartenders");
+                        System.out.println("Opcion 4. Menu Mesas");
+                        System.out.println("Opcion 5. Cerrar Sesion / Salida");
+
+                        menu = k1ng.nextInt();
                     } else {
                         x--;
                     }
                 }
-             Log=false;   
+                Log = false;
             }
         }
     }
@@ -89,7 +102,49 @@ public class Lab2Progra2_CarlosNoé {
     }
 
     public static void CRUDChefs(ArrayList<Chefs> ING) {
-        
+        Scanner k1ng2 = new Scanner(System.in);
+        System.out.println("Bienvenid al menu \n"
+                + "1. Crear \n"
+                + "2. Modificar\n"
+                + "3. Eliminar \n"
+                + "4. listar \n"
+                + "5. Salida");
+        int menu = k1ng2.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 5) {
+                if ((menu > 0) && (menu < 3)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            CrearConsecionaria();
+                            break;
+                        case 2:
+                            MODCliente();
+                            break;
+                        case 3:
+                            
+                            break;
+                        case 4:
+                            
+                            break;
+
+                    }// switch menu p
+                    System.out.println("Bienvenid al menu \n"
+                            + "1. Crear \n"
+                            + "2. Modificar\n"
+                            + "3. Eliminar \n"
+                            + "4. listar\n"
+                            + "5. Salida");
+                    menu = k1ng2.nextInt();
+
+                } else {
+                    System.out.println("Ingrese adecuadamente el numero");
+                    x--;
+                }//if
+            }//while
+        }//for
+
+        System.out.println("Fin");
     }
 
     public static void CRUDMeseros(ArrayList<Meseros> ING) {
