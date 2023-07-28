@@ -398,12 +398,13 @@ public class Lab2Progra2_CarlosNoé {
         System.out.println("Fin");
 
     }
-        public static void ListarMeseros(ArrayList<Meseros> ING) {
+
+    public static void ListarMeseros(ArrayList<Meseros> ING) {
         for (int i = 0; i < ING.size(); i++) {
             System.out.println(i + "- " + ING.get(i).getNombre());
         }
     }
-    
+
     public static void EliminarMeseros(ArrayList<Meseros> ING) {
         ListarMeseros(ING);
         Scanner k1ng2 = new Scanner(System.in);
@@ -419,7 +420,7 @@ public class Lab2Progra2_CarlosNoé {
             }
         }
     }
-    
+
     public static void CrearMeseros(ArrayList<Meseros> ING) {
         Scanner k1ng3 = new Scanner(System.in);
         Scanner k1ng4 = new Scanner(System.in);
@@ -584,12 +585,12 @@ public class Lab2Progra2_CarlosNoé {
 
                     }// switch menu p
                     System.out.println("Bienvenid al menu \n"
-                + "1. Cambiar el nombre del Chef \n"
-                + "2. Cambiar la edad del chef \n"
-                + "3. Cambiar las propinas \n"
-                + "4. Cambiar el turno\n"
-                + "5. Cambiar el sueldo"
-                + "6. Salida");
+                            + "1. Cambiar el nombre del Chef \n"
+                            + "2. Cambiar la edad del chef \n"
+                            + "3. Cambiar las propinas \n"
+                            + "4. Cambiar el turno\n"
+                            + "5. Cambiar el sueldo"
+                            + "6. Salida");
 
                 } else {
                     System.out.println("Ingrese adecuadamente el numero");
@@ -600,6 +601,209 @@ public class Lab2Progra2_CarlosNoé {
 
         System.out.println("Fin");
 
+    }
+
+    public static void CrearBartenders(ArrayList<Bartenders> ING) {
+        Scanner k1ng3 = new Scanner(System.in);
+        Scanner k1ng4 = new Scanner(System.in);
+        System.out.println("Ingrese el nombre: ");
+        String Name = k1ng3.nextLine();
+        System.out.println("Ingrese la edad: ");
+        int edad = k1ng4.nextInt();
+        System.out.println("Ingrese el sueldo: ");
+        double Sueldo = k1ng3.nextDouble();
+        boolean DiaoNoc = false;
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Ingrese su turno if es de dia 1 si no 2");
+            int Turn = k1ng4.nextInt();
+            if (Turn == 1) {
+                DiaoNoc = true;
+                i++;
+            } else if (Turn == 2) {
+                DiaoNoc = false;
+                i++;
+            } else {
+                i--;
+            }
+        }
+        System.out.println("Ingrese el numero de licores");
+        int Licores = k1ng3.nextInt();
+
+        if ((edad >= 18) && (Sueldo > 0.00) && (Sueldo > 0)) {
+            Bartenders mes = new Bartenders(Name, edad, DiaoNoc, Sueldo, Licores);
+            ING.add(mes);
+        } else {
+            System.out.println("Valores Invalidos ");
+        }
+    }
+
+    public static void ModBartenders(ArrayList<Bartenders> ING) {
+        Scanner k1ng = new Scanner(System.in);
+        System.out.println("Bienvenid al menu \n"
+                + "1. Cambiar el nombre del Bartenders \n"
+                + "2. Cambiar la edad del Bartenders \n"
+                + "3. Cambiar las propinas \n"
+                + "4. Cambiar el turno\n"
+                + "5. Cambiar el sueldo"
+                + "6. Salida");
+        int menu = k1ng.nextInt();
+        for (int x = 0; x < 1; x++) {
+            while (menu != 6) {
+                if ((menu > 0) && (menu < 7)) { // 4 es igual al numero limite que deseo agregar
+                    x++;
+                    switch (menu) {
+                        case 1:
+                            ListarBartenders(ING);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero del chef que desea cambiar el Nombre: ");
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    i++;
+                                    System.out.println("Ingrese el nuevo nombre");
+                                    String nombre = k1ng.nextLine();
+                                    ING.get(Cambiar).setNombre(nombre);
+                                }
+                            }
+                            break;
+                        case 2:
+                            ListarBartenders(ING);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero de la persona que desea cambiarle la edad: ");
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    i++;
+                                    for (int j = 0; j < 1; j++) {
+                                        System.out.println("Ingrese la nueva edad");
+                                        int Edad = k1ng.nextInt();
+                                        if (Edad >= 18) {
+                                            j++;
+                                            ING.get(Cambiar).setEdad(Edad);
+                                        } else {
+                                            System.out.println("Valor invalido");
+                                            j--;
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 3:
+                            ListarBartenders(ING);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero de la persona que desea cambiarle el numero de licores: ");
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    i++;
+                                    for (int j = 0; j < 1; j++) {
+                                        System.out.println("Ingrese la nueva numero de lic");
+                                        int Edad = k1ng.nextInt();
+                                        if (Edad >= 18) {
+                                            j++;
+                                            ING.get(Cambiar).setNumeroLico(Edad);
+                                        } else {
+                                            System.out.println("Valor invalido");
+                                            j--;
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 4:
+                            ListarBartenders(ING);
+                            boolean marca;
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero de la persona que desea cambiar el turno: ");
+                                marca = ING.get(i).isTurno();
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    if (marca = false) {
+                                        ING.get(i).setTurno(true);
+                                    } else {
+                                        ING.get(i).setTurno(false);
+                                    }
+                                    i++;
+
+                                }
+                            }
+
+                            break;
+                        case 5:
+                            ListarBartenders(ING);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero de la persona que desea cambiarle el sueldo: ");
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    i++;
+                                    for (int j = 0; j < 1; j++) {
+                                        System.out.println("Ingrese el nuevo sueldo");
+                                        int Edad = k1ng.nextInt();
+                                        if (Edad > 0) {
+                                            j++;
+                                            ING.get(Cambiar).setSueldo(Edad);
+                                        } else {
+                                            System.out.println("Valor invalido");
+                                            j--;
+                                        }
+                                    }
+                                }
+                            }
+
+                            break;
+
+                    }// switch menu p
+                    System.out.println("Bienvenid al menu \n"
+                            + "1. Cambiar el nombre del Chef \n"
+                            + "2. Cambiar la edad del chef \n"
+                            + "3. Cambiar las propinas \n"
+                            + "4. Cambiar el turno\n"
+                            + "5. Cambiar el sueldo"
+                            + "6. Salida");
+
+                } else {
+                    System.out.println("Ingrese adecuadamente el numero");
+                    x--;
+                }//if
+            }//while
+        }//for
+
+        System.out.println("Fin");
+
+    }
+
+    public static void ListarBartenders(ArrayList<Bartenders> ING) {
+        for (int i = 0; i < ING.size(); i++) {
+            System.out.println(i + "- " + ING.get(i).getNombre());
+        }
+    }
+
+    public static void EliminarBartenders(ArrayList<Bartenders> ING) {
+        ListarBartenders(ING);
+        Scanner k1ng2 = new Scanner(System.in);
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Ingrese el numero del Bartenders que desea eliminar: ");
+            int Cambiar = k1ng2.nextInt();
+            if (Cambiar >= ING.size()) {
+                i--;
+                System.out.println("Mal Ingresado");
+            } else {
+                i++;
+                ING.remove(Cambiar);
+            }
+        }
     }
 
     public static void CRUDBartenders(ArrayList<Bartenders> ING) {
@@ -617,16 +821,16 @@ public class Lab2Progra2_CarlosNoé {
                     x++;
                     switch (menu) {
                         case 1:
-                            CrearConsecionaria();
+                            CrearBartenders(ING);
                             break;
                         case 2:
-                            MODCliente();
+                            ModBartenders(ING);
                             break;
                         case 3:
-
+                            EliminarBartenders(ING);
                             break;
                         case 4:
-
+                            ListarBartenders(ING);
                             break;
 
                     }// switch menu p
@@ -646,6 +850,70 @@ public class Lab2Progra2_CarlosNoé {
         }//for
 
         System.out.println("Fin");
+    }
+
+    public static void CrearMesas(ArrayList<Mesas> ING) {
+        Scanner k1ng3 = new Scanner(System.in);
+        Scanner k1ng4 = new Scanner(System.in);
+        System.out.println("Ingrese el Numero de platos: ");
+        int Name = k1ng3.nextInt();
+        System.out.println("Ingrese el numero de utencilios ");
+        int edad = k1ng4.nextInt();
+        System.out.println("Ingrese el precio total");
+        double precio = k1ng3.nextDouble();
+        Mesas mes = new Mesas(Name, edad, precio);
+        ING.add(mes);
+    }
+
+    public static void MODMesas() {
+        Scanner k1ng = new Scanner(System.in);
+        System.out.println("1. Mod Numero De mesas\n"
+                + "2. Mod Numero de utencilios \n"
+                + "3. Mod Precio mesas");
+        int Mas = k1ng.nextInt();
+        for (int w = 0; w < 1; w++) {
+            while (Mas != 5) {
+                if ((Mas > 0) && (Mas < 5)) {
+                    w++;
+                    switch (Mas) {
+                        case 1:
+                            ListarBartenders(ING);
+                            for (int i = 0; i < 1; i++) {
+                                System.out.println("Ingrese el numero de la persona que desea cambiarle la edad: ");
+                                int Cambiar = k1ng.nextInt();
+                                if (Cambiar >= ING.size()) {
+                                    i--;
+                                    System.out.println("Mal Ingresado");
+                                } else {
+                                    i++;
+                                    for (int j = 0; j < 1; j++) {
+                                        System.out.println("Ingrese la nueva edad");
+                                        int Edad = k1ng.nextInt();
+                                        if (Edad >= 18) {
+                                            j++;
+                                            ING.get(Cambiar).setEdad(Edad);
+                                        } else {
+                                            System.out.println("Valor invalido");
+                                            j--;
+                                        }
+                                    }
+                                }
+                            }
+                            break;
+                        case 2:
+
+                            break;
+                        case 3:
+
+                            break;
+
+                    }
+                } else {
+                    w--;
+                    System.out.println("Termino Incorrecto");
+                }
+            }
+        }
     }
 
     public static void CRUDMesas(ArrayList<Mesas> ING) {
@@ -694,4 +962,25 @@ public class Lab2Progra2_CarlosNoé {
         System.out.println("Fin");
     }
 
+    public static void ListarMesas(ArrayList<Mesas> ING) {
+        for (int i = 0; i < ING.size(); i++) {
+            System.out.println(i + "- " + ING.get(i).getNumeroDePlatos());
+        }
+    }
+
+    public static void EliminarMesas(ArrayList<Mesas> ING) {
+        ListarMesas(ING);
+        Scanner k1ng2 = new Scanner(System.in);
+        for (int i = 0; i < 1; i++) {
+            System.out.println("Ingrese el numero del Bartenders que desea eliminar: ");
+            int Cambiar = k1ng2.nextInt();
+            if (Cambiar >= ING.size()) {
+                i--;
+                System.out.println("Mal Ingresado");
+            } else {
+                i++;
+                ING.remove(Cambiar);
+            }
+        }
+    }
 }
